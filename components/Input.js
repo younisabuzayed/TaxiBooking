@@ -26,7 +26,7 @@ const Input = ({
       autoCapitalize={autoCapitalize}
     />
   );
-}
+};
 
 export default Input;
 
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingStart: 15,
   },
-})
+});
