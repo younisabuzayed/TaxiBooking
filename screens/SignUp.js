@@ -7,14 +7,33 @@ import { View, Text, StyleSheet, Dimensions } from "react-native";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { SignUpUser } from "../src/actions/AuthAction";
+import { connect } from "react-redux";
+
 const height = Dimensions.get('window').height + 28;
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({
+    name:'',
     email: '',
     password: '',
     phone: '',
-    name:'',
 });
+const _onSignUpPressed = () =>
+{
+    const {email , password, phone, name } = inputs;
+    props.SignUpUser({ email , password, phone, name });
+};
+
+const _renderButton = () =>
+{
+    return (
+         <Button style={styles.btnSignUp}
+         onPress={() => _onSignUpPressed()}
+         >
+         <Text style={styles.btnTextSignUp}>SIGN UP</Text>
+       </Button>
+    );
+};
   return (
     <KeyboardAwareScrollView>
       <View style={styles.container}>
@@ -32,8 +51,9 @@ const SignUp = (props) => {
           <View style={{ height: "2%" }} />
           <Input
             placeholder="Lurch Schpellchek"
-            autoCapitalize="none"
+            // autoCapitalize=""
             autoCompleteType="name"
+            onChangeText={(name) => setInputs(name)}
           />
 
           <View style={{ height: "3%" }} />
@@ -44,6 +64,7 @@ const SignUp = (props) => {
             placeholder="schpellchek201@gmail.com"
             autoCapitalize="none"
             autoCompleteType="email"
+            onChangeText={(email) => setInputs({email})}
           />
           <View style={{ height: "3%" }} />
 
@@ -53,6 +74,7 @@ const SignUp = (props) => {
             placeholder="(+1) 352-262-5409"
             autoCapitalize="none"
             autoCompleteType="tel"
+            onChangeText={(phone) => setInputs(phone)}
           />
 
           <View style={{ height: "3%" }} />
@@ -64,15 +86,16 @@ const SignUp = (props) => {
             autoCapitalize="none"
             autoCompleteType="password"
             secureTextEntry={true}
+            onChangeText={(password) => setInputs(password)}
           />
           <Text style={styles.textRules}>
             By click you agree to our terms & Conditions as well as our Privacy
             policy.
           </Text>
           <View style={{ height: "5%" }} />
-          <Button style={styles.btnSignUp}>
-            <Text style={styles.btnTextSignUp}>SIGN UP</Text>
-          </Button>
+          {
+            _renderButton()
+          }
         </View>
 
         <View style={styles.footerContainer}>
@@ -176,4 +199,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp;
+export default connect(null, {SignUpUser})(SignUp);

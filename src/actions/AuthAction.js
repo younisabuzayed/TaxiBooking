@@ -8,7 +8,7 @@ export const LoginUser = ({ email, password }) => {
 };
 export const SignUpUser = ({email, password, phone, name}) =>
 {
-    console.log(`Email ${email} and Password ${password}`);
+    console.log(`Email ${email} and Password ${password} and phone ${phone} and name ${name}`);
 
     return {
         type: 'lignup-attempt',
