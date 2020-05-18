@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="196" height="140.249" viewBox="0 0 196 140.249">
+    <text x="20" y="50" font-family="Roboto">Roboto</text>
+      <style>
+      .textt{
+           font-family: cursive;
+      }
+      </style>
+    <g transform="translate(-277.08 -225.751)">
+        <image width="128" height="27" transform="translate(311 290)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAbCAYAAAC0n4dLAAAABHNCSVQICAgIfAhkiAAAAf5JREFUaEPtmr1KXVEUhL8rNoqQQDqbPIRREEJM5SvYSapoFMUXsMoLBEXzU4ldXiGdKAREH8JGK1FRTBNMmHtPZTcHZldrV7fYm1lrzpw1+651BsAVMEF2HQBbWQjGgF/AmzDOGbAIPIVxvgAfwhh/BsA9MBUG+g6shjEkgBNgPozzG3jbQADfgJVwLg8SwC3wIgz0FVgLY0gAR93DSUJJZAsNBLAPfEomAtyVAHyGSwA+Z1QF8EmrCmByVhZgElYW4BOmE2UBPXgrC/BJKwswOSsLMAkrC/AJKwvox1n9C+jBWzMLuAFe9gjQOVJ3AIet0d4WArhVI+ifH5t94keDtqaCUp9+xo7OO3DeYN6giNQ+/+iF5u+WANSjHw8KQUOTV8B0uH0qIV8Aj4DySixhTAKvgxiKWxfaS+C6+53IRRz9TRH1PGANNTTcSK/ZrgokcVRhVGnSSy+mqkB0tRKABkF70UxG49n3wHEYR5NADZ30libXencPSGLESuXzoEsA/mMsAZicVQUwCdP2sgCftLIAn7PhxyB1B/CIKwvw+KpLoMnXcHtZgM9aWYDPWVlAD87KAkzS6l+ASVhZQA/Cuq+OqxFkcrcB7Jhn+mxXJ1APJ7neNcBQ/JvAbjKRlhVgGfgcHDgpFw1qloDTMGlzwM/wBVqX823gMJwL/wFIOKK8M6fKDQAAAABJRU5ErkJggg=="/>
+            <path stroke="black" fill="black" d="M399.142,274.79l-53.6.012a14.128,14.128,0,0,1-27.742.006l-14.71,0-5.6-7.995,1.014-4.548h2.831v-.036h10.063l3.309-4H301.5c.463-2.216,1.8-6.031,1.8-6.031l34.163-7.148,27.849-14.892h10.349l2.872-4.409h11.7l2.873,4.409h10.6l20.429,16.148,18.376,4.969a30.8,30.8,0,0,1,1.609,3.332l-2.182,1.791,1.317,5.87h4.906l2.331,4.548-4.315,7.961-19.3,0a14.128,14.128,0,0,1-27.749.007Zm6.5-2.688a7.374,7.374,0,1,0,7.375-7.382A7.387,7.387,0,0,0,405.642,272.1Zm-81.339,0a7.373,7.373,0,1,0,7.374-7.382A7.386,7.386,0,0,0,324.3,272.1Zm63.969-6.738h2.771V253.2h-2.771Zm-4.447,0H386.9l-3.249-6.377L386.9,253.2h-3.215l-2.019,4.036-2-4.036h-3.217l3.25,5.782-3.25,6.377h3.063l2.155-4.536Zm-11.546-2.619.651,2.619h2.959l-3.336-12.192h-3.815L365.4,265.363h2.975l.634-2.619Zm-15.463-7.359h3.079v9.978h2.771v-9.978h3.1V253.2h-8.945Zm55.34-1.057v2.418h2.416v-2.418h-2.416v-2.417h-2.415v2.417h-2.416v-2.417h-2.414v2.417H402.5v-2.417h-2.415v2.417H402.5v2.418h2.416v-2.418h2.414v2.418h2.416v-2.418Zm-14.49,2.418h2.416v-2.418h-2.416Zm-49.747-2.418v2.418h2.416v-2.418h-2.416v-2.417H345.5v2.417Zm-4.83,0v2.418H345.5v-2.418h-2.416v-2.417h-2.415v2.417Zm-4.829,0v2.418h2.415v-2.418H338.26v-2.417h-2.415v2.417Zm-4.83,2.418h2.416v-2.418h-2.416Zm17.038-11.2h61.139l-12.912-10.381H370.662Zm19.075,15.018,1.094-4.475,1.094,4.475Z"/>
+            <text class="textt" transform="translate(375.08 357)" fill="#fb4c5a" font-size="36" font-family="Lobster-Regular, Lobster" letter-spacing="0.03em">
+                <tspan x="-97.368" y="0">Triptivo</tspan><tspan y="0" xml:space="preserve" fill="#000"> Taxi </tspan>
+            </text>
+    </g>
+</svg>

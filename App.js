@@ -1,19 +1,48 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+/* eslint-disable prettier/prettier */
+/* eslint-disable quotes */
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import React, { useState } from "react";
+import Intro from "./screens/Intro";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
+import { Provider } from "react-redux";
+import Store from './src/store/index';
+const getFonts = async () => {
+  await Font.loadAsync({
+    "raleway-extrabold": require("./assets/fonts/Raleway-ExtraBold.ttf"),
+    "raleway-blod": require("./assets/fonts/Raleway-Bold.ttf"),
+    "roboto-medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "roboto-blod": require("./assets/fonts/Raleway-Bold.ttf"),
+    "raleway-semibold": require("./assets/fonts/Raleway-SemiBold.ttf"),
+  });
+};
+const Stack = createStackNavigator();
+export default function App({ navigator, route }) {
+  let [fontsLoaded, setFontsLoaded] = useState(false);
+  if (fontsLoaded) {
+    return (
+      <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Intro" component={Intro} />
+          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="SignUp" component={SignUp} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      </Provider>
+    );
+  } else {
+    return (
+      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
