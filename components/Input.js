@@ -12,6 +12,8 @@ const Input = ({
   autoCompleteType,
   autoCapitalize,
   onChangeText,
+  defaultValue,
+  name,
 }) => {
   return (
     <TextInput
@@ -24,6 +26,8 @@ const Input = ({
       secureTextEntry={secureTextEntry}
       autoCompleteType={autoCompleteType}
       autoCapitalize={autoCapitalize}
+      defaultValue={defaultValue}
+      name={name}
     />
   );
 };

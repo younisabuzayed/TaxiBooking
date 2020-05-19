@@ -21,7 +21,7 @@ const SignUp = (props) => {
 const _onSignUpPressed = () =>
 {
     const {email , password, phone, name } = inputs;
-    props.SignUpUser({ email , password, phone, name });
+    SignUpUser({ email , password, phone, name });
 };
 
 const _renderButton = () =>
@@ -53,7 +53,7 @@ const _renderButton = () =>
             placeholder="Lurch Schpellchek"
             // autoCapitalize=""
             autoCompleteType="name"
-            onChangeText={(name) => setInputs(name)}
+            onChangeText={(name) => setInputs({name})}
           />
 
           <View style={{ height: "3%" }} />
@@ -74,7 +74,7 @@ const _renderButton = () =>
             placeholder="(+1) 352-262-5409"
             autoCapitalize="none"
             autoCompleteType="tel"
-            onChangeText={(phone) => setInputs(phone)}
+            onChangeText={(phone) => setInputs({phone})}
           />
 
           <View style={{ height: "3%" }} />
@@ -86,7 +86,7 @@ const _renderButton = () =>
             autoCapitalize="none"
             autoCompleteType="password"
             secureTextEntry={true}
-            onChangeText={(password) => setInputs(password)}
+            onChangeText={(password) => setInputs({password})}
           />
           <Text style={styles.textRules}>
             By click you agree to our terms & Conditions as well as our Privacy

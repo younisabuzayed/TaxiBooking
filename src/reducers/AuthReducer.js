@@ -10,6 +10,11 @@ export default (state = INITIAL_STATE, action) =>
              ...state,
              isLoading: true,
         };
+        case 'signup-attempt':
+         return {
+            ...state,
+            isLoading: true,
+        };
         default:
         return state;
     }
