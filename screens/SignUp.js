@@ -15,12 +15,20 @@ const SignUp = (props) => {
   const [inputs, setInputs] = useState({
     name:'',
     email: '',
-    password: '',
     phone: '',
+    password: '',
 });
+const [Name, setName] = useState({name: ''});
+const [Email, setEmail] = useState({email: ''});
+const [Phone, setPhone] = useState({phone: ''});
+const [Password, setPassword] = useState({password: ''});
 const _onSignUpPressed = () =>
 {
-    const {email , password, phone, name } = inputs;
+    const {name} = Name,
+    {email} = Email,
+    {phone} = Phone,
+    {password} = Password;
+
     SignUpUser({ email , password, phone, name });
 };
 
@@ -53,7 +61,7 @@ const _renderButton = () =>
             placeholder="Lurch Schpellchek"
             // autoCapitalize=""
             autoCompleteType="name"
-            onChangeText={(name) => setInputs({name})}
+            onChangeText={(name) => setName({name})}
           />
 
           <View style={{ height: "3%" }} />
@@ -64,7 +72,7 @@ const _renderButton = () =>
             placeholder="schpellchek201@gmail.com"
             autoCapitalize="none"
             autoCompleteType="email"
-            onChangeText={(email) => setInputs({email})}
+            onChangeText={(email) => setEmail({email})}
           />
           <View style={{ height: "3%" }} />
 
@@ -74,7 +82,7 @@ const _renderButton = () =>
             placeholder="(+1) 352-262-5409"
             autoCapitalize="none"
             autoCompleteType="tel"
-            onChangeText={(phone) => setInputs({phone})}
+            onChangeText={(phone) => setPhone({phone})}
           />
 
           <View style={{ height: "3%" }} />
@@ -86,7 +94,7 @@ const _renderButton = () =>
             autoCapitalize="none"
             autoCompleteType="password"
             secureTextEntry={true}
-            onChangeText={(password) => setInputs({password})}
+            onChangeText={(password) => setPassword({password})}
           />
           <Text style={styles.textRules}>
             By click you agree to our terms & Conditions as well as our Privacy

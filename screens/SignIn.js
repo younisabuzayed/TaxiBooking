@@ -11,15 +11,15 @@ import { LoginUser } from '../src/actions/AuthAction';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
  const height = Dimensions.get('window').height + 28;
 const SignIn = (props) => {
-    
+
     const [Password, setPassword] = useState({password:''});
     const [Email, setEmail] = useState({email:''});
+
    const _onLoginPressed = () =>
     {
         const {password} = Password;
         const {email} = Email;
         LoginUser({email, password});
-        console.log(`Email ${email} and Password ${password}`);
     };
     const _renderButton = () =>
     {
@@ -53,7 +53,7 @@ const SignIn = (props) => {
                         placeholder="Email"
                         autoCapitalize="none"
                         autoCompleteType="email"
-                        onChangeText={(email) => setEmail({email})}
+                        onChangeText={email => setEmail({email})}
                         />
 
                     <View style={{height:"4%"}} />
@@ -64,7 +64,7 @@ const SignIn = (props) => {
                         placeholder="*************"
                         autoCapitalize="none"
                         autoCompleteType="password"
-                        onChangeText={(password) => setPassword({password})}
+                        onChangeText={password => setPassword({password})}
                         secureTextEntry={true} />
                     <Button style={styles.btnForgotPassword} >
                         <Text style={styles.btnTextForgotPassword}>
