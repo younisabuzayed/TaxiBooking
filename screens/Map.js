@@ -1,22 +1,18 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
 import CurrentLocationButton from '../components/currentLocationButton';
 
-class Map extends React.Component {
+const Map = () => {
+    const [Region,setRegion] = useState({region:null});
+    useEffect(() => {
+        _getLocationAsync();
+    });
 
-    constructor(props)
-    {
-        super(props);
-        this.state = 
-        {
-            region: null
-        }
-    }
-     _getLocationAsync = async() =>
+    const _getLocationAsync = async() =>
     {
         let { status } = await Permissions.askAsync(Permissions.LOCATION);
         if (status !== 'granted')
@@ -29,37 +25,34 @@ class Map extends React.Component {
             latitudeDelta: 0.045,
             longitudeDelta: 0.045,
         };
-        this.setState({region: region});
+        setRegion({region: region});
     };
-    centerMap = () => {
-        const {latitude, longitude, latitudeDelta, longitudeDelta} = this.state.region;
-       this.map.animateToRegion({
+    const centerMap = () => {
+        const {latitude, longitude, latitudeDelta, longitudeDelta} = Region.region;
+       Map.map.animateToRegion({
             latitude,
             longitude,
             latitudeDelta,
             longitudeDelta,
-        });
+        }, 1000);
     console.log(latitude);
     };
-    render()
- {
+
     return (
         <View style={styles.container}>
-            <CurrentLocationButton cb={() => this.centerMap()}/>
+            <CurrentLocationButton cb={() => centerMap()}/>
             <MapView
             provider={PROVIDER_GOOGLE}
-            initialRegion ={this.state.region}
+            initialRegion ={Region.region}
             showsUserLocation={true}
             showsCompass={true}
             rotateEnabled={false}
             style={styles.mapStyle}
-            ref={(ref)=> {this.map = ref}}
-            onRegionChange={this._getLocationAsync}
+            ref={ref => {Map.map = ref;}}
             />
         </View>
     );
 };
-}
  const styles = StyleSheet.create({
      container:
      {
@@ -69,7 +62,7 @@ class Map extends React.Component {
      mapStyle:
      {
          flex:1,
-         marginTop: '8%'
+         marginTop: '8%',
      },
  });
 export default Map;
