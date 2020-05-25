@@ -7,3 +7,5 @@
 7.npm i @react-native-community/eslint-config
 8.npm i --s--dev eslint @react-native-community/eslint-config
 9.npm i react-native-keyboard-aware-scroll-view --save //Important
+10.npm install react-native-maps --save-exact
+expo install expo-permissions

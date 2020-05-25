@@ -11,6 +11,9 @@ import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import { Provider } from "react-redux";
 import Store from './src/store/index';
+import Success from './screens/Success';
+import Map from "./screens/Map";
+
 const getFonts = async () => {
   await Font.loadAsync({
     "raleway-extrabold": require("./assets/fonts/Raleway-ExtraBold.ttf"),
@@ -33,6 +36,8 @@ export default function App({ navigator, route }) {
             headerShown: false,
           }}
         >
+          <Stack.Screen name="Map" component={Map} />
+          <Stack.Screen name="Success" component={Success} />
           <Stack.Screen name="Intro" component={Intro} />
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
